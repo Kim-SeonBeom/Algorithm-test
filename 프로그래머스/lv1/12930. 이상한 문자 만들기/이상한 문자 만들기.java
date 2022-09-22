@@ -6,8 +6,11 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         String result = "";
         s = s.toUpperCase();
-        StringTokenizer st = new StringTokenizer(s, " ", true);
+        ////구분자 = " " , 구분자포함여부///
+        StringTokenizer st = new StringTokenizer(s, " ", true);  
+                        
         ArrayList<String> list = new ArrayList<String>();
+        
         while (st.hasMoreTokens()) {
             list.add(st.nextToken());
         }
@@ -19,8 +22,6 @@ class Solution {
                       sb.append((list.get(i).charAt(j)));
                 }else
                     sb.append(((char) (list.get(i).charAt(j) + 32)));
-               
-                  
             }
         }
         result = sb.toString();
