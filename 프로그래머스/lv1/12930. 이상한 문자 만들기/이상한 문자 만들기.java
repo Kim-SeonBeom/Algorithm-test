@@ -5,7 +5,7 @@ class Solution {
     public String solution(String s) {
         StringBuilder sb = new StringBuilder();
         String result = "";
-        s = s.toLowerCase();
+        s = s.toUpperCase();
         StringTokenizer st = new StringTokenizer(s, " ", true);
         ArrayList<String> list = new ArrayList<String>();
         while (st.hasMoreTokens()) {
@@ -15,12 +15,12 @@ class Solution {
             if (list.get(i).equals(" ")) {
                 sb.append(list.get(i));
             } else for (int j = 0; j < list.get(i).length(); j++) {
-                if (j == 0) {
-                   sb.append((char) (list.get(i).charAt(j) - 32));
-                } else if (j > 0 && j % 2 == 0) {
-                    sb.append((char) (list.get(i).charAt(j) - 32));
-                } else
-                    sb.append((list.get(i).charAt(j)));
+                if (j % 2 == 0) {
+                      sb.append((list.get(i).charAt(j)));
+                }else
+                    sb.append(((char) (list.get(i).charAt(j) + 32)));
+               
+                  
             }
         }
         result = sb.toString();
