@@ -33,18 +33,19 @@
 
 
 class Solution {
-    public String solution(String s, int n) {
-        char[] ss = s.toCharArray();
-
-		for (int i = 0; i < ss.length; i++) {
-			if (ss[i] == ' ') {
-				continue;
-			}
-
-            char firstAlphabet = ss[i] >= 'a' ? 'a' : 'A';
-            ss[i] = (char)(firstAlphabet + (ss[i] - firstAlphabet + n) % 26);
-		}
-
-		return new String(ss);
+    public String solution(String s) {
+        s = s.toLowerCase();
+        char[] s_split = s.toCharArray();
+        int wordIdx = 0;
+        for(int i = 0; i < s_split.length; i++){
+            wordIdx = (s_split[i] == ' ') ? 0 : wordIdx+1;
+            
+            if(wordIdx %2 != 0 ){
+                s_split[i] = (char)(s_split[i]-32);
+            
+            }
+        }
+      
+        return new String(s_split);
     }
 }
