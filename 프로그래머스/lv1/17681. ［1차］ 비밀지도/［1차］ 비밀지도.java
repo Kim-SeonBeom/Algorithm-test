@@ -5,7 +5,7 @@ class Solution {
             String s = String.format("%"+n+"d", Long.parseLong(Integer.toBinaryString( arr1[i] | arr2[i])));
             arr5[i] = s;
             for (int j = 0; j < arr5[i].length(); j++) {
-                if (arr5[i].charAt(j) == '0' || arr5[i].charAt(j) == ' ') {
+                if (arr5[i].charAt(j) == '0') {
                     arr5[i] = arr5[i].replaceAll("0", " ");
                 } else arr5[i] = arr5[i].replaceAll("1", "#");
             }
