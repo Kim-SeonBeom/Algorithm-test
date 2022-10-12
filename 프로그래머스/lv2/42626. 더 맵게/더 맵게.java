@@ -6,7 +6,7 @@ class Solution {
         for (int i = 0; i < scoville.length; i++) {
             pq.add(scoville[i]);
         }
-        while(pq.peek()<=K && pq.size()>1){
+        while(pq.peek()<=K&&pq.size()>1){
            pq.add(pq.poll() + 2*pq.poll());
             cnt++;
         }
