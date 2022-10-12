@@ -10,8 +10,9 @@ class Solution {
            pq.add(pq.poll() + 2*pq.poll());
             cnt++;
         }
-        if(pq.size()<1||pq.peek()<=K){
+        if(pq.size() < 1 || pq.peek() <= K){
             return -1;
+            
         }else return cnt;
       
     }
