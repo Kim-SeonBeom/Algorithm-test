@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
@@ -28,16 +30,16 @@ public class Main {
         for (int i = 0; i < m; i++) {
             m_arr[i] = Integer.parseInt(st.nextToken());
         }
-
+        StringBuffer sb = new StringBuffer();
         for (int i = 0; i < m; i++) {
             int key = m_arr[i];
             boolean flag = false;
             int start = 0;
             int mid = 0;
-            int end = n_arr.length;
+            int end = n_arr.length - 1;
             while (start < end) {
-                mid = (start + end - 1) / 2;
-                if (key == n_arr[mid]) {
+                mid = (start + end) / 2;
+                if (key == n_arr[mid]||key == n_arr[start] || key == n_arr[end]) {
                     flag = true;
                     break;
                 } else {
@@ -49,10 +51,13 @@ public class Main {
                 }
             }
             if (flag) {
-                System.out.println(1);
-            } else System.out.println(0);
-
-
+                sb.append(1);
+                sb.append("\n");
+            } else {
+                sb.append(0);
+                sb.append("\n");
+            }
         }
+        System.out.println(sb);
     }
 }
