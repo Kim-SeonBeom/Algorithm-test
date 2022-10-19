@@ -20,34 +20,38 @@ public class Main {
         for (int i = 0; i < n; i++) {
             n_arr[i] = Integer.parseInt(st.nextToken());
         }
-        Arrays.sort(n_arr);
+        
         m = Integer.parseInt(br.readLine());
         int sum = 0;
         int left = 0;
-        int right = n_arr[n_arr.length - 1];
+        int right = 0;
+        for (int i = 0; i < n_arr.length; i++) {
+            right = Math.max(right, n_arr[i]);
+            
+        }
         int mid = 0;
         while (left <= right) {
             mid = (left + right) / 2;
             sum = 0;
-      //      System.out.println("mid = " + mid);
-     //       System.out.println("right = " + right);
-     //       System.out.println("left = " + left);
+            //       System.out.println("mid = " + mid);
+            //       System.out.println("right = " + right);
+            //       System.out.println("left = " + left);
             for (int i = 0; i < n_arr.length; i++) {
                 if (n_arr[i] < mid) {
                     sum += n_arr[i];
                 } else sum += mid;
             }
-     //       System.out.println("sum = " + sum);
+            //       System.out.println("sum = " + sum);
             if (sum > m) {
                 right = mid - 1;
             }else {
                 left = mid + 1;
             }
-   //         System.out.println();
+            //         System.out.println();
         }
-    //    System.out.println("mid = " + mid);
-    //    System.out.println("right = " + right);
-    //    System.out.println("left = " + left);
+        //    System.out.println("mid = " + mid);
+        //    System.out.println("right = " + right);
+        //    System.out.println("left = " + left);
         System.out.println(right);
 
 
