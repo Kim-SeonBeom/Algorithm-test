@@ -1,11 +1,6 @@
-
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
-
-import static java.util.Collections.reverseOrder;
-
 
 public class Main {
 
@@ -18,8 +13,6 @@ public class Main {
         }
         Arrays.sort(arr, Collections.reverseOrder());
         int max  = Integer.MIN_VALUE;
-        int cnt = 0;
-        int sum = 0;
         int weight = 0;
         for (int i = 0; i < n; i++) {
             weight = arr[i]*(i+1);
