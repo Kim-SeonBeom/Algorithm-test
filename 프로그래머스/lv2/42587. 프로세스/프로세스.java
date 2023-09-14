@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] priorities, int location) {
-     
+
         int times = 1;
         int[] chk = new int[10];
         int max = 9;
