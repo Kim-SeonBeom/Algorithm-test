@@ -3,13 +3,13 @@ import java.util.*;
 class Solution {
     public int solution(int cacheSize, String[] cities) {
         int times = 0;
+        if(cacheSize == 0){
+           times = cities.length * 5;
+           return times;
+        }
         ArrayList<String> cache = new ArrayList<>();
         for (int i = 0; i < cities.length; i++) {
             cities[i] = cities[i].toLowerCase();
-            if(cacheSize == 0){
-                times = cities.length * 5;
-                break;
-            }
             if (cache.contains(cities[i])) {
                 cache.remove(cities[i]);
                 cache.add(cities[i]);
