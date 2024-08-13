@@ -1,5 +1,4 @@
 import java.util.*;
-
 class Solution {
     public static HashMap<Character, Integer> hm = new HashMap<>();
     public int solution(String skill, String[] skill_trees) {
