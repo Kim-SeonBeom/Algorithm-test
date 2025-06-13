@@ -12,7 +12,7 @@ public class Main {
         StringTokenizer st = new StringTokenizer(s);
 //        PriorityQueue<Integer> pq = new PriorityQueue<>();
         Integer [] arr1 = new Integer[n];
-        int [] arr2 = new int[n];
+        int [] arr2 = new int[n];   
 //        int [] arr3 = new int[n];
 
 //        for (int i = 0; i < n; i++) {
